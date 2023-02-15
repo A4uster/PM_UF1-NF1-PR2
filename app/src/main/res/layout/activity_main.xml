@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#DE9151"
+    android:gravity="center"
+    android:padding="50dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#BBB8B2"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/TV_Title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Login"
+            android:textSize="30sp"
+            android:textColor="#F34213"
+            android:gravity="center"/>
+
+        <FrameLayout
+            android:id="@+id/FL_Login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <Button
+                android:id="@+id/BT_Regist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registrarse"
+                android:backgroundTint="#BC5D2E"
+                android:textColor="@color/black"
+                android:layout_weight="3"
+                />
+            <Button
+                android:id="@+id/BT_Login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="#BC5D2E"
+                android:textColor="@color/black"
+                android:layout_weight="5"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

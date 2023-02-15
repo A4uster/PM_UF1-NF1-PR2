@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity2"
+    android:background="#DE9151"
+    android:gravity="center"
+    android:padding="50dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#BBB8B2"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/TV_Title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Registrarse"
+            android:textSize="30sp"
+            android:textColor="#F34213"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/TV_IExtraRecibido"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+        <FrameLayout
+            android:id="@+id/FL_Register"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <Button
+                android:id="@+id/BT_MRegist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registrarse"
+                android:backgroundTint="#BC5D2E"
+                android:textColor="@color/black"
+                android:layout_weight="3"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
