@@ -28,7 +28,7 @@
             android:layout_weight="6"
             />
         <EditText
-            android:id="@+id/ET_MNombre"
+            android:id="@+id/ET_FNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nombre completo"
@@ -48,7 +48,7 @@
             android:layout_weight="6"
             />
         <EditText
-            android:id="@+id/ET_MUsername"
+            android:id="@+id/ET_FUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Username"
@@ -67,7 +67,7 @@
             android:layout_weight="6"
             />
         <EditText
-            android:id="@+id/ET_MCorreo"
+            android:id="@+id/ET_FCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Correo electronico"
@@ -87,7 +87,7 @@
             android:layout_weight="6"
             />
         <EditText
-            android:id="@+id/ET_MPassword"
+            android:id="@+id/ET_FPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Contraseña"
@@ -107,7 +107,7 @@
             android:layout_weight="6"
             />
         <EditText
-            android:id="@+id/ET_MnewPassword"
+            android:id="@+id/ET_FnewPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Repetir Contraseña"
@@ -115,6 +115,22 @@
             android:inputType="textPassword"
             />
     </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/CB_ViewModel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recordar credenciales" />
+        <Button
+            android:id="@+id/BT_FRegist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrarse"
+            android:backgroundTint="#BC5D2E"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_weight="3"
+            />
 
     </LinearLayout>
 

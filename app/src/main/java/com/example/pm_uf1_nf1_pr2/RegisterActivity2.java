@@ -27,29 +27,31 @@ public class RegisterActivity2 extends AppCompatActivity {
         String CorreoRecibidoSMV = getIntent().getStringExtra("correo");
         mTV_IExtra.setText(CorreoRecibidoSMV);
 
-
+        /*
         mBT_NRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(RegisterActivity2.this, MainActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
         getSupportFragmentManager().beginTransaction().replace(R.id.FL_Register, new RegisterFragment()).commit();
 
 
     }
     private void InicializarComponents() {
+        /*
         mET_nombreCompleto = findViewById(R.id.ET_MNombre);
         mET_username = findViewById(R.id.ET_MUsername);
         mET_correos = findViewById(R.id.ET_MCorreo);
         mET_password = findViewById(R.id.ET_MPassword);
         mET_NewPassword = findViewById(R.id.ET_MnewPassword);
 
-       mBT_NRegistro = findViewById(R.id.BT_MRegist);
+        mBT_NRegistro = findViewById(R.id.BT_MRegist);
+        mFL_RegistDades = findViewById(R.id.FL_Register);
+*/
 
-        //mFL_RegistDades = findViewById(R.id.FL_Register);
         mTV_IExtra = findViewById(R.id.TV_IExtraRecibido);
 
 
