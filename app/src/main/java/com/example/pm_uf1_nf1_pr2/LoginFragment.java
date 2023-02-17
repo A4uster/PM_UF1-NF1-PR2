@@ -30,8 +30,8 @@ public class LoginFragment extends Fragment {
         mET_IModelView.getCorreoLiveData().observe(getViewLifecycleOwner(), itemObservat -> {
             mET_ICorreo.setText(itemObservat);
         });
-        mET_IModelView.getPasswordLiveData().observe(getViewLifecycleOwner(), item ->{
-            mET_IPassword.setText(item);
+        mET_IModelView.getPasswordLiveData().observe(getViewLifecycleOwner(), itemObservat ->{
+            mET_IPassword.setText(itemObservat);
         });
         return view;
         // Inflate the layout for this fragment
