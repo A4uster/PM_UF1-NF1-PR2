@@ -17,6 +17,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.UUID;
+
 public class RegisterFragment extends Fragment {
 
     private EditText mET_RFNombre, mET_RFUsername, mET_RFCorreo, mET_RFPassword, mET_RFNewPassword;
@@ -24,6 +29,9 @@ public class RegisterFragment extends Fragment {
     private CheckBox mCB_FRModelView;
     private Button mBT_FRButon;
     private boolean isChecked = false;
+
+    private FirebaseDatabase mDatabase;
+    private DatabaseReference mReference;
 
 
     @Override
@@ -33,13 +41,18 @@ public class RegisterFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_register, container, false);
 
         //Declaracion de variables utilizadas
+        mET_RFNombre = v.findViewById(R.id.ET_FNombre);
+        mET_RFUsername = v.findViewById(R.id.ET_FUsername);
         mET_RFCorreo = v.findViewById(R.id.ET_FCorreo);
         mET_RFPassword = v.findViewById(R.id.ET_FPassword);
         mET_RFNewPassword = v.findViewById(R.id.ET_FnewPassword);
         mCB_FRModelView = v.findViewById(R.id.CB_ViewModel);
         mBT_FRButon = v.findViewById(R.id.BT_FRegist);
 
-        //
+
+        //Inicializar Base de datos Firebase
+        mDatabase = FirebaseDatabase.getInstance("https://pm-uf1-nf1-pr2-default-rtdb.firebaseio.com/");
+        mReference = mDatabase.getReference();
 
         //Item model View hacer set
 
@@ -68,11 +81,11 @@ public class RegisterFragment extends Fragment {
                         //En caso de que funcione debe de guardar la informacion con MVVM
                         mItemModelView.setCorreoLiveData(mET_RFCorreo.getText().toString());
                         mItemModelView.setPasswordLiveData(mET_RFPassword.getText().toString());
-
                     }
                     //2.2 El checkbox no está seleccionado
                     else {
                     }
+                    RegistrarUsuarios();
                     Intent intent = new Intent(getContext(), MainActivity.class);
                     startActivity(intent);
                     //Intent intent = new Intent(RegisterActivity2.this, MainActivity.class);
@@ -86,5 +99,20 @@ public class RegisterFragment extends Fragment {
 
         return v;
         //return inflater.inflate(R.layout.fragment_register, container, false);
+    }
+
+    private void RegistrarUsuarios() {
+
+        String mRnom = mET_RFNombre.getText().toString();
+        String mRusername = mET_RFUsername.getText().toString();
+        String mRcorreo = mET_RFCorreo.getText().toString();
+        String mRpassword = mET_RFPassword.getText().toString();
+        String mRuid = UUID.randomUUID().toString();
+
+        UsuariR usuari = new UsuariR(mRnom, mRusername, mRcorreo, mRpassword, mRuid);
+
+        mReference.child("Usuario").child(mRuid).setValue(usuari);
+
+
     }
 }
